@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Linq;
-using System.Reflection;
 
 namespace GestaoFornecedores.Infra.CrossCutting.Excel
 {
@@ -152,17 +151,6 @@ namespace GestaoFornecedores.Infra.CrossCutting.Excel
 			r.Style.Border.Bottom.Color.SetColor(System.Drawing.Color.Black);
 			r.Style.Border.Left.Color.SetColor(System.Drawing.Color.Black);
 			r.Style.Border.Right.Color.SetColor(System.Drawing.Color.Black);
-		}
-
-		private static string GetDescricao(object value)
-		{
-			FieldInfo fi = value.GetType().GetField(value.ToString());
-			var attributes = (DescriptionAttribute[])fi.GetCustomAttributes(typeof(DescriptionAttribute), false);
-
-			if (attributes != null && attributes.Length > 0)
-				return attributes[0].Description;
-
-			return value.ToString();
 		}
 
 		public static byte[] ExportaExcel<T>(List<T> data, string Heading = "", bool showSlno = false, params string[] ColumnsToTake)
