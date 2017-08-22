@@ -64,7 +64,7 @@ namespace GestaoFornecedores.Infra.CrossCutting.Excel
 					}
 				}
 
-				// Se tiver titulo deixar a linha maior para destacar
+				// Se tiver titulo deixar a linha maior para destacar 
 				if (linhaInicial.Equals(3))
 					AplicarEstiloTitulo(workSheet.Row(1));
 

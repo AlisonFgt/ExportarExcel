@@ -23,6 +23,7 @@ namespace GestaoFornecedores.Infra.CrossCutting.ExtensionMethods
 			{
 				throw ex;
 			}
+			
 		}
 	}
 }
